@@ -34,6 +34,11 @@ The core in `MEGADUCK.pak/` is the libretro buildbot's 64-bit ARM Linux nightly 
 
 Pushing a tag `vX.Y.Z` that matches `version` in `pak.json` makes a GitHub release with the zip attached.
 
+## Made with an AI assistant
+
+This pak was built with the help of an LLM (Claude, by Anthropic): the scripts, configuration and documentation were
+written in conversation with it, and tested on a real TrimUI Brick.
+
 ## License
 
 The pak's own files are MIT ([LICENSE](LICENSE)). SameDuck is part of SameBoy by Lior Halphon, under the Expat license
