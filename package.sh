@@ -3,7 +3,7 @@
 # For a manual install, unzip it into a new folder: SD card Emus/tg5040/MEGADUCK.pak/.
 set -e
 cd "$(dirname "$0")"
-[ -f MEGADUCK.pak/sameduck_libretro.so ] || ./fetch-core.sh
+[ -f MEGADUCK.pak/sameduck_libretro.so ] || ./build-core.sh
 cp LICENSE-SameDuck MEGADUCK.pak/
 mkdir -p dist
 rm -f dist/MEGADUCK.pak.zip

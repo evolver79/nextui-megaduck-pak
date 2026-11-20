@@ -27,10 +27,13 @@ Same as the Game Boy: D-pad, A, B, Select, Start. Change them in the in-game men
 
 ```sh
 ./package.sh       # writes dist/MEGADUCK.pak.zip
-./fetch-core.sh    # only to move to a newer core build; test it on a device before releasing
+./build-core.sh    # rebuilds the core in Docker; test it on a device before releasing
 ```
 
-The core in `MEGADUCK.pak/` is the libretro buildbot's 64-bit ARM Linux nightly from 13 Nov 2026 (needs glibc 2.29+).
+The core in `MEGADUCK.pak/` is built from SameDuck's source (SameBoy's `SameDuck` branch, commit `5619abd`) for 64-bit
+ARM Linux, with one change: it outputs sound at 48 kHz instead of 384 kHz. At 384 kHz NextUI had to downsample 6,400
+samples a frame, which kept a CPU core of the Brick maxed out and made games run slower than on the real console. At
+48 kHz the core uses about two thirds of a CPU core and games run at full speed.
 
 Pushing a tag `vX.Y.Z` that matches `version` in `pak.json` makes a GitHub release with the zip attached.
 
